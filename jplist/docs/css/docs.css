@@ -1,0 +1,161 @@
+html, body{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	height: 100%;
+}
+
+body{
+	background: url('../img/bg.png');
+	font-family: 'arial';
+	font-size: 12px;
+	color: #313131;
+}
+
+p, li, h1, h2, h3{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+ul{
+	padding: 0px 0px 0px 15px;
+	margin: 0px 0px 10px 15px;	
+}
+
+img{
+	border: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: #4C938C;
+	font-weight: bold;
+}
+
+.box{
+	float: left;
+	width: 100%;
+}
+
+.center{
+	width: 1000px;
+	margin: 0px auto 0px auto;
+}
+
+.hide{
+	display: none;
+}
+
+.code pre{
+	float: left;
+	width: 947px;
+	overflow: auto;
+}
+
+span.num{
+	color: #880000;
+}
+
+/* product name */
+#name h1{
+	padding: 30px 0px 10px 0px;
+	text-align: center;
+	font-size: 24px;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* top panel */
+.top-panel{
+	width: 100%;
+	height: 50px;
+	background-color: #BEB0A3;
+	border-bottom: 1px solid  #423021;
+}
+
+#logos{
+	float: left;
+	width: 100%;	
+}
+
+#logos a{
+	margin: 10px 5px 0px 0px;
+	display: block;
+	float: left;
+}
+
+#logos a#created{
+	float: right;
+	margin: 17px 10px 0px 0px;
+	color: #fff;
+}
+
+/* tabs */
+#tabs-nav{
+	margin: 0px auto;
+	width: 450px;	
+}
+
+#tabs-nav ul{
+	width: 100%;
+	float: left;
+	margin: 20px 0px 0px 0px;
+	
+	list-style: none;	
+	background-color: #fff;
+	border: 1px solid  #423021;
+}
+
+#tabs-nav ul li{
+	float: left;
+	cursor: pointer;
+	width: 90px;
+	text-align: center;
+	padding: 3px 0px;
+	font-size: 14px;
+}
+
+#tabs-nav ul li.active{
+	font-weight: bold;
+}
+
+/* tabs content */
+#tabs-content{
+	width: 100%;
+	float: left;
+	background-color: #fff;
+	border: 1px solid  #423021;
+	margin: 20px 0px 20px 0px;
+}
+
+#tabs-content .tab{
+	width: 100%;
+	float: left;
+	min-height: 500px;
+}
+
+#tabs-content .tab .content{
+	float: left;
+	padding: 15px;
+}
+
+#tabs-content .tab p{
+	padding: 0px 0px 10px 0px;
+	line-height: 18px;
+}
+
+#tabs-content .tab p.title{
+	font-size: 16px;
+	color: #880000;
+}
+
+#tabs-content .tab li{
+	line-height: 18px;	
+}
+
+#thank-you{
+	padding: 20px 0px 15px 0px;	
+}
+
+#thank-you p{
+	text-align: center;
+	line-height: 26px;
+}

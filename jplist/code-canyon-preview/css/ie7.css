@@ -1,0 +1,22 @@
+/* filter */
+.jplist .filter{	
+	position: relative;
+}
+
+.jplist .filter .placeholder-parent{
+	margin: 0px 0px 0px 10px;
+	position: relative;
+}
+
+.jplist .filter .placeholder{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0px 0px 0px 0px;	
+	margin: 0px 0px 0px 15px;	
+	border-radius: 3px;	
+}
+
+.jplist .filter .placeholder-parent input{
+	margin: 0px 0px 0px 0px;
+}

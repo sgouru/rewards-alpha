@@ -1,0 +1,6 @@
+/*
+ * jQuery jPList Plugin 2.0
+ * Copyright 2012 Miriam Zusin. All rights reserved.
+ * To use this file you must to buy a licence at http://codecanyon.net/user/no81no/portfolio
+ */
+ 

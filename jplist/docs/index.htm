@@ -1,0 +1,535 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<link href="css/docs.css" rel="stylesheet" type="text/css"/>
+		<link href="google-code-prettify/prettify.css" rel="stylesheet" type="text/css"/>
+		
+		<script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.docs.js"></script>
+	</head>
+	<body>
+		<!-- top panel -->
+		<div class="top-panel">
+			<div id="logos">				
+				
+				<a href="http://codecanyon.net/feeds/users/no81no.atom" title="" style="margin-left: 10px;">
+					<img src="img/feed.png" alt="" title=""/>
+				</a>
+				
+				<a href="http://codecanyon.net/user/no81no/follow" title="">
+					<img src="img/codecanyon.png" alt="" title=""/>
+				</a>
+				
+				<a href="http://codecanyon.net/user/no81no/portfolio" title="">
+					<img src="img/avatar.png" alt="" title=""/>
+				</a>
+				
+				<a href="mailto:no81no@gmail.com" title="">
+					<img src="img/email.png" alt="" title=""/>
+				</a>
+				
+				<a id="created" href="http://codecanyon.net/user/no81no/portfolio">Created by Miriam Zusin, 16 March 2012</a>
+			</div>
+		</div>		
+		
+		<div class="center">
+		
+			<!-- name -->
+			<div class="box" id="name">
+				<h1>jQuery jPList Plugin Documentation</h1>
+			</div>
+			
+			<div class="box">
+			
+				<!-- tabs -->
+				<div id="tabs-nav">
+					<ul>
+						<li data-tab="tab-overview">Overview</li>
+						<li data-tab="tab-usage">Usage</li>
+						<li data-tab="tab-settings">Settings</li>
+						<li data-tab="tab-faq">FAQ</li>
+						<li data-tab="tab-api">API</li>
+					</ul>
+				</div>
+				
+				<!-- tabs content -->
+				<div id="tabs-content">
+
+					<!-- tab -->
+					<div class="tab" data-tab="tab-overview">
+						<div class="box" id="thank-you">
+							<p>
+								Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file,<br/> 
+								please feel free to email via my user page contact form <a href="http://codecanyon.net/user/no81no" title="">here</a>. Thanks so much!
+							</p>
+						</div>
+						
+						<div class="content" style="padding-top: 0px;">
+						
+							<p class="title">Overview</p>
+							<p>
+								jPList is a flexible jQuery plugin for <strong>sorting</strong>, <strong>pagination</strong> and <strong>filtering</strong> of any HTML structure (DIVs, UL/LI, tables, etc). 
+							</p>
+
+							<ul>
+								<li><a href="http://www.do-web.com/code-canyon-preview/jplist/preview.htm" title="">DIVs Layout Demo</a></li>
+								<li><a href="http://www.do-web.com/code-canyon-preview/jplist/table.htm" title="">Table Demo</a></li>
+								<li><a href="http://www.do-web.com/code-canyon-preview/jplist/ul-li.htm" title="">UL LI Demo</a></li>
+								<li><a href="http://www.do-web.com/code-canyon-preview/jplist/dropdown.htm" title="">Dropdown Filter Demo</a></li>
+							</ul>
+
+							<p class="title">Features</p>
+							<ul>    
+								<li>Works with any content (tables, lists, div elements etc...)</li>
+								<li>Ascending and descending sorting</li>
+								<li>Alphanumeric and numeric sorting</li>
+								<li>Sorting by date</li>
+								<li>Auto pagination</li>
+								<li>Any number of filters (input fields)</li>	
+								<li>Any number of drop down filters</li>
+								<li>Supports cookies</li>
+								<li>Fully customizable CSS</li>
+								<li>Works in all major browsers</li>
+								<li>SEO friendly</li>
+								<li>API functions</li>
+							</ul>
+						
+							<p class="title">Updates on 03/27/2012</p>
+							<ul>    
+								<li>Cookies expiration option is added.</li>
+								<li>Drop down filter is added.</li>
+								<li>API for filters.</li>
+								<li>"No result found" section is added.</li>
+								<li>New demo page is added.</li>
+							</ul>
+
+							<p class="title">Updates on 03/20/2012</p>
+							<ul>    
+								<li>Sorting by date is added.</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- tab -->
+					<div class="tab hide" data-tab="tab-usage">
+						<div class="content">
+						
+							<p class="title">HTML Structure</p>
+							
+							<p style="padding-top: 10px;"><span class="num">1.</span> Add the following HTML to the HEAD section of your page:</p>
+							
+							<div class="code">
+<pre class="prettyprint">
+&lt;script type="text/javascript" src="js/jquery.js">&lt;/script><br/>
+&lt;script type="text/javascript" src="js/jplist.min.js">&lt;/script><br/>
+&lt;link href="css/jplist.css" rel="stylesheet" type="text/css"/><br/>
+</pre>
+							</div>
+							
+							<p><span class="num">2.</span> Add plugin call to the HEAD section of your page:</p>
+							
+							<div class="code">
+<pre class="prettyprint">					
+&lt;script type="text/javascript">	
+
+$("#demo").jplist({
+
+	//main options
+	items_box: ".list", //items container
+	item_path: ".list-item", //path to the item
+	
+	//sort
+	sort: {title: "p.title",
+		   description: "p.desc",
+		   like: "p.like",
+		   date: "p.date"},
+		   
+	//sort options for page load
+	sort_name: "title", 
+	sort_order: "asc", //"desc",
+	sort_type: "text",
+	
+	//filter
+	filter_path: ".filter",
+	filter: {title: "p.title",
+		 description: "p.desc"}			
+});
+&lt;/script>
+</pre>
+							</div>
+							
+							<p><span class="num">3.</span> Add the following HTML to the BODY section of your page:</p>
+							
+							<div class="code">
+<pre class="prettyprint">	
+&lt;div id="demo" class="box jplist">
+
+	&lt;!-- panel -->
+	&lt;div class="panel box panel-top">						
+								
+		&lt;div class="drop-down page-by">
+			&lt;ul>
+				&lt;li>&lt;span data-number="3"> 3 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="5"> 5 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="10"> 10 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="all"> View All &lt;/span>&lt;/li>
+			&lt;/ul>
+		&lt;/div>
+		&lt;div class="drop-down sort-drop-down">
+			&lt;ul>
+				&lt;li>&lt;span data-sort="default">Sort by&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="title" data-order="asc" data-type="text">Title A-Z&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="title" data-order="desc" data-type="text">Title Z-A&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="description" data-order="asc" data-type="text">Description A-Z&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="description" data-order="desc" data-type="text">Description Z-A&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="like" data-order="asc" data-type="number">Likes asc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="like" data-order="desc" data-type="number">Likes desc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="date" data-order="asc" data-type="date">Date asc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="date" data-order="desc" data-type="date">Date desc&lt;/span>&lt;/li>
+			&lt;/ul>
+		&lt;/div>
+		
+		&lt;div class="drop-down filter-drop-down">
+			&lt;ul>
+				&lt;li>&lt;span data-name="default">Filter by category&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-name="architecture">Architecture&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-name="christmas">Christmas&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-name="food">Food&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-name="nature">Nature&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-name="other">Other&lt;/span>&lt;/li>
+			&lt;/ul>
+		&lt;/div>
+								
+		&lt;!-- filter -->
+		&lt;div class="filter">							
+			&lt;input data-name="title" type="text" value="" placeholder="Filter by title"/>						
+		&lt;/div>
+		&lt;div class="info" data-type="range">&lt;/div>
+		&lt;div class="buttons">&lt;/div>						
+	&lt;/div>
+	
+	&lt;!-- data -->   
+	&lt;div class="list">						
+		
+		&lt;!-- item 1 -->
+		&lt;div class="list-item">					
+			&lt;!-- img -->
+			&lt;div class="img">
+				&lt;img src="img/calendar-1.jpg" alt="" title=""/>
+			&lt;/div>
+			
+			&lt;!-- data -->
+			&lt;div class="block">
+				&lt;p class="date">05/08/2003&lt;/p>
+				&lt;p class="title">Calendar&lt;/p>
+				&lt;p class="desc">A calendar is a system of organizing days for social, religious, commercial, or administrative purposes. This is done by giving names to periods of time, typically days, weeks, months, and years. The name given to each day is known as a date. Periods in a calendar (such as years and months) are usually, though not necessarily, synchronized with the cycle of the sun or the moon.&lt;/p>
+				&lt;p class="theme other">Other&lt;/p>
+				&lt;p class="like">18 Likes&lt;/p>
+			&lt;/div>
+		&lt;/div>
+		
+		&lt;!-- item 2 -->
+		&lt;div class="list-item">					
+			&lt;!-- img -->
+			&lt;div class="img">
+				&lt;img src="img/arch-2.jpg" alt="" title=""/>
+			&lt;/div>
+			
+			&lt;!-- data -->
+			&lt;div class="block">
+				&lt;p class="date">03/18/2012&lt;/p>
+				&lt;p class="title">Architecture&lt;/p>
+				&lt;p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.&lt;/p>
+				&lt;p class="theme architecture">Architecture&lt;/p>
+				&lt;p class="like">25 Likes&lt;/p>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	
+	&lt;div class="box jplist-no-results">
+		&lt;p>No results found&lt;/p>
+	&lt;/div>
+	
+	&lt;!-- panel -->
+	&lt;div class="panel box panel-bottom">						
+								
+		&lt;div class="drop-down page-by">
+			&lt;ul>
+				&lt;li>&lt;span data-number="3"> 3 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="5"> 5 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="10"> 10 per page &lt;/span>&lt;/li>
+				&lt;li>&lt;span data-number="all"> View All &lt;/span>&lt;/li>
+			&lt;/ul>
+		&lt;/div>
+		&lt;div class="drop-down sort-drop-down">
+			&lt;ul>
+				&lt;li>&lt;span data-sort="default">Sort by&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="title" data-order="asc" data-type="text">Title A-Z&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="title" data-order="desc" data-type="text">Title Z-A&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="description" data-order="asc" data-type="text">Description A-Z&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="description" data-order="desc" data-type="text">Description Z-A&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="like" data-order="asc" data-type="number">Likes asc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="like" data-order="desc" data-type="number">Likes desc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="date" data-order="asc" data-type="date">Date asc&lt;/span>&lt;/li>
+				&lt;li>&lt;span data-sort="date" data-order="desc" data-type="date">Date desc&lt;/span>&lt;/li>
+			&lt;/ul>
+		&lt;/div>
+		
+		&lt;div class="info" data-type="range">&lt;/div>
+		&lt;div class="buttons">&lt;/div>						
+	&lt;/div>
+&lt;/div>			
+</pre>
+							</div>
+						
+						</div>
+					</div>	
+										
+					<!-- tab -->
+					<div class="tab hide" data-tab="tab-faq">
+						<div class="content">
+							<p class="title">How to add sorting filter?</p>
+							
+							<p>
+								Add the following LI to the sort drop down menu:
+							</p>
+							
+							<div class="code">
+								<pre class="prettyprint">
+&lt;li>&lt;span data-sort="my_sort_filter" data-order="asc" data-type="text">Sort Filter Name&lt;/span>&lt;/li>
+								</pre>
+							</div>
+							
+							<ul>
+								<li>"data-type" can be "text", "number" or "date"</li>
+								<li>"data-order" can be "asc" or "desc"</li>
+								<li>"data-sort" is a filter name</li>
+							</ul>	
+
+							<p>
+								And add your filter to the plugin:
+							</p>
+							
+							<div class="code">
+								<pre class="prettyprint" style="margin-bottom: 20px;">
+$("#demo").jplist({
+		
+	...
+	
+	//sort
+	sort:  {title: "p.title",
+		description: "p.desc",
+		like: "p.like",
+		date: "p.date",
+		my_sort_filter: "jquery path to HTML"},
+		   
+	sort_name: "title", //default sort name
+	sort_order: "asc", //"desc",
+	sort_type: "text", //default sort type
+	
+	...
+				
+});
+								</pre>
+							</div>
+							
+							<p class="title">How to add search filter?</p>
+							
+							<p>
+								Add the following INPUT to the section: &lt;div class="filter">...&lt;/div>:
+							</p>
+							
+							<div class="code">
+								<pre class="prettyprint">
+&lt;input data-name="my_search_filter_name" type="text" value="" placeholder="Filter by..."/>
+								</pre>
+							</div>
+
+							<p>
+								And add your filter to the plugin:
+							</p>
+							
+							<div class="code">
+								<pre class="prettyprint">
+$("#demo").jplist({
+		
+	...
+	
+	filter_path: ".filter",
+	filter: {title: "p.title",
+		 description: "p.desc",
+		 my_search_filter_name: "query path to HTML"},
+	
+	...
+				
+});
+								</pre>
+							</div>
+							
+							<p class="title">How to change pagination info style?</p>
+							
+							<p>To get "1 - 3 of 33" style:</p>
+							<div class="code">
+								<pre class="prettyprint">
+&lt;div class="info" data-type="range">&lt;/div>
+								</pre>
+							</div>
+							
+							<p>To get "Page 2 of 45" style:</p>
+							<div class="code">
+								<pre class="prettyprint" style="marign: 20px 0px">
+&lt;div class="info" data-type="page">&lt;/div>
+								</pre>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!-- tab -->
+					<div class="tab hide" data-tab="tab-settings">
+						<div class="content">
+							
+							<p class="title">Settings List:</p>
+							
+							<div class="code">
+<pre class="prettyprint">					
+&lt;script type="text/javascript">	
+
+$("#demo").jplist({
+
+	//main options
+	items_box: ".demo-tbl", //items container
+	item_path: ".tbl-item", //path to the item
+	css_prefix: "jplist", //css class of container	
+	redraw_callback: "", //callback function
+	no_results: ".jplist-no-results", //path to the "no results" html
+	
+	//cookies
+	cookies: true, //save page state after refresh
+	expiration: -1, //cookies expiration in days (-1 = cookies expire when browser is closed)
+	
+	//sort
+	sort: {title: "p.title",
+		   description: "p.desc",
+		   like: "p.like",
+		   date: "p.date"},
+	sort_name: "title", //sort name on page load (or "default" for initial page order)
+	sort_order: "asc", //default sort order: "asc" or "desc",
+	sort_type: "text", //default sort type: "text", "number" or "date"
+	
+	//filter
+	filter_path: ".filter", //path to the filter container
+	filter: {title: "p.title",
+		 description: "p.desc"},
+	
+	//paging
+	pagingbox: ".buttons", //path to the paging buttons
+	pageinfo: ".info", //path to the paging info box
+	items_on_page: 3, //items number on page
+	paging_length: 7,  //pager length
+	show_one_page: false, //if show pager for one button only
+	
+	//arrows
+	prev_arrow: "&amp;lt;",
+	next_arrow: "&amp;gt;",
+	first_arrow: "&amp;lt;&amp;lt;",
+	last_arrow: "&amp;gt;&amp;gt;",
+	
+	//drop down
+	sort_dd_path: ".sort-drop-down", //sorting drop sown menu path
+	paging_dd_path: ".page-by",	 //paging drop sown menu path	
+	filter_dd_path: ".filter-drop-down"	//drop down filter path
+});
+&lt;/script>
+</pre>
+							</div>
+						</div>
+					</div>	
+					
+					<!-- tab -->
+					<div class="tab hide" data-tab="tab-api">
+						<div class="content">
+						
+							<p class="title">API Functions:</p>
+							
+							<div class="code">
+<pre class="prettyprint" style="margin-bottom: 20px;">
+&lt;script type="text/javascript">    
+	
+	//plugin call
+	$("#demo").jplist({				
+		....
+	});
+	
+	//API examples ------------------------------------------------------------
+	
+	//sort by description desc
+	$("#sort-desc-test").click(function(){
+		var sort_name = "description";
+		var order =  "desc"; //"asc" or "desc",
+		var sort_type = "text"; //"text", "number" or "date"					
+		$("#demo").data("jplist").api_sort(sort_name, order, sort_type);
+	});
+	
+	//sort by likes asc
+	$("#sort-likes-test").click(function(){
+		var sort_name = "like";
+		var order =  "asc"; //"asc" or "desc",
+		var sort_type = "number"; //"text", "number" or "date"					
+		$("#demo").data("jplist").api_sort(sort_name, order, sort_type);
+	});
+	
+	//change items per page to 10
+	$("#page-test").click(function(){
+		var items_on_page = 10;		
+		$("#demo").data("jplist").api_pages_per_page(items_on_page);
+	});
+	
+	//filter by title with 'car'
+	$("#input-filter-test").click(function(){
+		var filter_name = "title";
+		var value = "car";		
+		$("#demo").data("jplist").api_search(filter_name, value);
+	});
+	
+	//jump to the page 3
+	$("#page-jump-test").click(function(){
+		var page = 3;
+		$("#demo").data("jplist").jump_to_page(page);
+	});
+	
+	//filter by category 'food'
+	$("#dd-filter-test").click(function(){
+		var filter_name = 'food'
+		$("#demo").data("jplist").drop_down_filter(filter_name);
+	});	
+&lt;/script>
+</pre>
+							</div>
+							
+							<p class="title">Minimizing Source Code</p>
+							
+							<p>
+								For the source code minimization and compilation any tool can be used.<br/>
+								I recommend <a href="http://code.google.com/closure/compiler/" title="" target="_blank">Google Closure Compiler</a>.<br/> 
+								It can be used in the following way:<br/>
+							</p>	
+							
+							<ol class="list">
+								<li>Install <a href="http://www.java.com/en/" title="" target="_blank">Java</a> on your computer.</li>
+								<li>Download <a href="http://code.google.com/closure/compiler/" title="" target="_blank">Google Closure Compiler</a>.</li>
+								<li>Use the following options:<br/>
+								java -jar compiler.jar --js source\*.js --js source\blocks\*.js --externs jquery-1.7.externs.js  --compilation_level SIMPLE_OPTIMIZATIONS  --warning_level VERBOSE --js_output_file ..\jplist.min.js</li>
+							</ol>
+						</div>
+					</div>	
+				</div>
+			
+			</div>
+		</div>
+	</body>
+</html>

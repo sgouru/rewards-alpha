@@ -1,0 +1,162 @@
+.jplist{
+	float: left;
+	width: 100%;
+}
+
+.jplist .jplist-no-results{
+	display: none;
+}
+
+.jplist .jplist-no-results p{
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+}
+
+/* panel */
+.jplist .panel{
+	float: left;
+	width: 100%;
+	
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 10px 0px;
+	
+	background: url('../img/bg.png');	
+	
+	font-family: 'arial';
+	color: #444;
+	font-size: 12px;	
+	line-height: 18px;
+}
+
+.jplist .panel-top{
+	border-radius: 5px 5px 0px 0px;
+}
+
+.jplist .panel-bottom{
+	border-radius: 0px 0px 5px 5px;
+}
+
+/* filter */
+.jplist .filter{
+	float: left;
+}
+
+.jplist .filter input{
+	display: block;
+	float: left;
+	
+	width: 130px;
+	height: 14px;
+	margin: 0px 0px 0px 15px;
+	
+	border: 1px solid #aaaaaa;
+	border-radius: 3px;
+}
+
+.jplist .filter .placeholder-parent{
+	margin: 0px 0px 0px 15px;
+	position: relative;
+	float: left;
+}
+
+.jplist .filter .placeholder{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0px 0px 0px 5px;	
+	border-radius: 3px;
+}
+
+.jplist .filter .placeholder-parent input{
+	margin: 0px 0px 0px 0px;
+}
+
+/* paging */
+.jplist .pagingprev,
+.jplist .pagingmid,
+.jplist .pagingnext{
+	float: left;
+}
+
+.jplist .buttons{
+	float: left;
+	margin: 0px 10px 0px 15px;	
+}
+
+.jplist .buttons span{
+	cursor: pointer;
+	color: #1E87AA;
+	margin: 0px 5px 0px 0px;	
+}
+
+.jplist .buttons  span.current{
+	font-weight: bold;
+	color: #F29326;
+}
+
+.jplist .info{
+	float: left;
+	margin: 0px 0px 0px 15px;
+}
+
+/* drop down */
+.jplist .drop-down{
+	float: left;
+	width: 130px;
+	height: 16px;
+	
+	margin: 0px 0px 0px 15px;	
+	border: 1px solid #cccccc;
+}
+
+.jplist .drop-down .panel{
+	float: left;
+	width: 125px;
+	height: 16px;
+	line-height: 16px;
+	
+	overflow: hidden;
+	background: #ffffff url('../img/down-arrow.jpg') no-repeat top right;
+	
+	padding: 0px 0px 0px 5px;
+	margin: 0px 0px 0px 0px;
+	cursor: pointer;
+}
+
+.jplist .drop-down ul{	
+
+	position: relative;
+	top: 0px;
+	left: -1px;
+	z-index: 1000;
+	
+	width: 129px;
+	display: none;
+	overflow: hidden;
+	
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	
+	list-style: none;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.jplist .drop-down ul li{
+	padding: 0px 0px 0px 5px;
+	cursor: pointer;
+	width: 130px;
+	float: left;
+	background-color: #ffffff;
+}
+
+.jplist .drop-down ul li:hover{
+	background-color: blue;
+	color: #ffffff;
+}
+
+.jplist .hidden{
+	display: none;
+}
